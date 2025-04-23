@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true', sidebarOpen: false, currentPage: 'dashboard', loading: false }" 
+      x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val) })"
+      :class="{ 'dark': darkMode }">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroLynxEdu AI</title>
+  
+  <!-- Tailwind CSS via CDN with Plugins -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a"},
+            neuro: {
+              purple: '#8B5CF6',
+              teal: '#14B8A6',
+              pink: '#EC4899'
+            }
+          },
+          animation: {
+            'spin-slow': 'spin 3s linear infinite',
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Alpine.js for Interactivity -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Firebase (Add your config) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+  
+  <style>
+    [x-cloak] { display: none !important; }
+    .dark { color-scheme: dark; }
+    .page-transition {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gradient-text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-200" 
+      :class="{ 'overflow-hidden': sidebarOpen && window.innerWidth < 768 }">
+  
+  <!-- ===== Mobile Sidebar Overlay ===== -->
+  <div x-show="sidebarOpen" @click="sidebarOpen = false" 
+       class="fixed inset-0 bg-black/50 z-20 md:hidden" x-transition></div>
+       <html lang="en" x-data="{ 
+        darkMode: localStorage.getItem('darkMode') === 'true', 
+        sidebarOpen: false, 
+        currentPage: 'dashboard', 
+        loading: false 
+      }" 
+            x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val) })"
+            :class="{ 'dark': darkMode }">
+  <!-- ===== Sidebar ===== -->
+  <aside class="fixed inset-y-0 left-0 z-30 w-64 bg-white dark:bg-gray-800 shadow-lg transform md:translate-x-0 transition-transform duration-300"
+         :class="{ '-translate-x-full': !sidebarOpen }">
+    <div class="flex items-center justify-between p-4 border-b dark:border-gray-700">
+      <h1 class="text-xl font-bold gradient-text">NeuroLynxEdu AI</h1>
+      <button @click="sidebarOpen = false" class="md:hidden text-gray-500">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="p-4 space-y-2">
+      <a @click="currentPage = 'dashboard'; sidebarOpen = false" 
+         class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+         :class="{ 'bg-primary/10 text-primary dark:bg-primary/20': currentPage === 'dashboard' }">
+        <i class="fas fa-tachometer-alt mr-3"></i> Dashboard
+      </a>
+      <a @click="currentPage = 'courses'; sidebarOpen = false" 
+         class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+         :class="{ 'bg-primary/10 text-primary dark:bg-primary/20': currentPage === 'courses' }">
+        <i class="fas fa-book-open mr-3"></i> Courses
+      </a>
+      <a @click="currentPage = 'analytics'; sidebarOpen = false" 
+         class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+         :class="{ 'bg-primary/10 text-primary dark:bg-primary/20': currentPage === 'analytics' }">
+        <i class="fas fa-chart-line mr-3"></i> Analytics
+      </a>
+      <a @click="currentPage = 'settings'; sidebarOpen = false" 
+         class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+         :class="{ 'bg-primary/10 text-primary dark:bg-primary/20': currentPage === 'settings' }">
+        <i class="fas fa-cog mr-3"></i> Settings
+      </a>
+    </nav>
+    <div class="absolute bottom-0 left-0 right-0 p-4 border-t dark:border-gray-700">
+      <button @click="darkMode = !darkMode" class="w-full flex items-center justify-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+        <i x-show="!darkMode" class="fas fa-moon mr-3"></i>
+        <i x-show="darkMode" class="fas fa-sun mr-3"></i>
+        <span x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== Main Content ===== -->
+  <div class="md:ml-64 transition-all duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm">
+      <div class="flex items-center justify-between p-4">
+        <button @click="sidebarOpen = true" class="md:hidden text-gray-500">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <input type="text" placeholder="Search..." 
+                   class="pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+            <i class="fas fa-search absolute left-3 top-2.5 text-gray-400"></i>
+          </div>
+          <button class="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+            <i class="fas fa-bell"></i>
+            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+          </button>
+          <div class="flex items-center space-x-2 cursor-pointer">
+            <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white">
+              <span>RB</span>
+            </div>
+            <span class="hidden md:inline font-medium dark:text-white">Ritika</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="p-6">
+      <!-- Loading Indicator -->
+      <div x-show="loading" class="fixed inset-0 bg-black/30 z-50 flex items-center justify-center">
+        <div class="animate-spin-slow rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
+      </div>
+
+      <!-- Dashboard Page -->
+      <div x-show="currentPage === 'dashboard'" x-transition class="page-transition">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">Dashboard</h2>
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500 dark:text-gray-400">Active Courses</p>
+                <h3 class="text-3xl font-bold dark:text-white">12</h3>
+              </div>
+              <div class="h-12 w-12 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+                <i class="fas fa-book text-indigo-600 dark:text-indigo-300"></i>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-green-500"><i class="fas fa-arrow-up mr-1"></i> 5% from last week</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500 dark:text-gray-400">Focus Level</p>
+                <h3 class="text-3xl font-bold dark:text-white">87%</h3>
+              </div>
+              <div class="h-12 w-12 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                <i class="fas fa-brain text-purple-600 dark:text-purple-300"></i>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-red-500"><i class="fas fa-arrow-down mr-1"></i> 2% from yesterday</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500 dark:text-gray-400">AI Sessions</p>
+                <h3 class="text-3xl font-bold dark:text-white">24</h3>
+              </div>
+              <div class="h-12 w-12 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center">
+                <i class="fas fa-robot text-teal-600 dark:text-teal-300"></i>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-green-500"><i class="fas fa-arrow-up mr-1"></i> 15% from last week</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500 dark:text-gray-400">Completion</p>
+                <h3 class="text-3xl font-bold dark:text-white">68%</h3>
+              </div>
+              <div class="h-12 w-12 rounded-full bg-pink-100 dark:bg-pink-900 flex items-center justify-center">
+                <i class="fas fa-trophy text-pink-600 dark:text-pink-300"></i>
+              </div>
+            </div>
+            <p class="mt-2 text-sm text-green-500"><i class="fas fa-arrow-up mr-1"></i> 8% from last month</p>
+          </div>
+        </div>
+        
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <h3 class="font-bold mb-4 dark:text-white">Focus Trends</h3>
+            <canvas id="focusChart" height="250"></canvas>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <h3 class="font-bold mb-4 dark:text-white">Course Progress</h3>
+            <canvas id="progressChart" height="250"></canvas>
+          </div>
+        </div>
+        
+        <!-- Recent Activity -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden mb-8">
+          <div class="p-6 border-b dark:border-gray-700">
+            <h3 class="font-bold dark:text-white">Recent Activity</h3>
+          </div>
+          <div class="divide-y dark:divide-gray-700">
+            <div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+              <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                  <i class="fas fa-book text-blue-500 dark:text-blue-300"></i>
+                </div>
+                <div>
+                  <p class="font-medium dark:text-white">Completed "Neural Networks 101"</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">2 hours ago</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+              <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+                  <i class="fas fa-brain text-green-500 dark:text-green-300"></i>
+                </div>
+                <div>
+                  <p class="font-medium dark:text-white">New focus record: 92%</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Yesterday</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+              <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+                  <i class="fas fa-robot text-purple-500 dark:text-purple-300"></i>
+                </div>
+                <div>
+                  <p class="font-medium dark:text-white">AI tutor session completed</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">2 days ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Page -->
+      <div x-show="currentPage === 'courses'" x-transition class="page-transition">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">My Courses</h2>
+        
+        <!-- Course Filters -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 space-y-4 md:space-y-0">
+          <div class="relative w-full md:w-64">
+            <input type="text" placeholder="Search courses..." 
+                   class="pl-10 pr-4 py-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+          </div>
+          <div class="flex space-x-2">
+            <button class="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg">
+              <i class="fas fa-plus mr-2"></i> New Course
+            </button>
+            <button class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+              <i class="fas fa-filter mr-2"></i> Filter
+            </button>
+          </div>
+        </div>
+        
+        <!-- Courses Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+            <div class="h-40 bg-gradient-to-r from-neuro-purple to-neuro-pink relative">
+              <span class="absolute top-4 right-4 bg-white/90 text-neuro-purple px-3 py-1 rounded-full text-sm font-medium">Active</span>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-bold text-lg dark:text-white">Neuro-Symbolic AI</h3>
+                <div class="flex items-center text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <span class="ml-1 text-gray-700 dark:text-gray-300">4.8</span>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">Master hybrid AI architectures combining neural networks and symbolic reasoning</p>
+              <div class="flex justify-between items-center">
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-neuro-teal h-2.5 rounded-full" style="width: 65%"></div>
+                </div>
+                <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-400">65%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+            <div class="h-40 bg-gradient-to-r from-neuro-teal to-blue-500 relative">
+              <span class="absolute top-4 right-4 bg-white/90 text-neuro-teal px-3 py-1 rounded-full text-sm font-medium">New</span>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-bold text-lg dark:text-white">EEG & BCI Integration</h3>
+                <div class="flex items-center text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <span class="ml-1 text-gray-700 dark:text-gray-300">4.9</span>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">Learn to integrate brain-computer interfaces with adaptive learning systems</p>
+              <div class="flex justify-between items-center">
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-neuro-teal h-2.5 rounded-full" style="width: 30%"></div>
+                </div>
+                <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-400">30%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden hover:shadow-lg transition">
+            <div class="h-40 bg-gradient-to-r from-orange-500 to-pink-500 relative">
+              <span class="absolute top-4 right-4 bg-white/90 text-orange-500 px-3 py-1 rounded-full text-sm font-medium">Popular</span>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-bold text-lg dark:text-white">Transformer Architectures</h3>
+                <div class="flex items-center text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <span class="ml-1 text-gray-700 dark:text-gray-300">4.7</span>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">Advanced course on GPT, BERT and modern NLP architectures</p>
+              <div class="flex justify-between items-center">
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-neuro-teal h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+                <span class="ml-3 text-sm font-medium text-gray-500 dark:text-gray-400">85%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Page -->
+      <div x-show="currentPage === 'analytics'" x-transition class="page-transition">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">Learning Analytics</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <h3 class="font-bold mb-4 dark:text-white">Performance Over Time</h3>
+            <canvas id="performanceChart" height="300"></canvas>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+            <h3 class="font-bold mb-4 dark:text-white">Focus Distribution</h3>
+            <canvas id="focusDistributionChart" height="300"></canvas>
+          </div>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-8">
+          <h3 class="font-bold mb-4 dark:text-white">Knowledge Graph</h3>
+          <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-lg flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-project-diagram text-4xl text-gray-300 dark:text-gray-500 mb-2"></i>
+              <p class="text-gray-500 dark:text-gray-400">Interactive knowledge graph visualization</p>
+              <button class="mt-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg">
+                Generate Graph
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- AI Chatbot -->
+<div x-data="{ 
+  chatOpen: false, 
+  messages: [], 
+  userInput: '', 
+  loading: false,
+  botTyping: false,
+  botTypingIndex: 0,
+  botTypingInterval: null
+}" 
+  class="fixed bottom-6 right-6 z-40">
+  
+  <!-- Chat Button -->
+  <button @click="chatOpen = !chatOpen" 
+          class="h-16 w-16 rounded-full bg-neuro-purple text-white shadow-lg hover:bg-neuro-purple/90 transition-all flex items-center justify-center">
+    <i x-show="!chatOpen" class="fas fa-robot text-2xl"></i>
+    <i x-show="chatOpen" class="fas fa-times text-2xl"></i>
+  </button>
+  
+  <!-- Chat Window -->
+  <div x-show="chatOpen" x-transition 
+       class="absolute bottom-20 right-0 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden flex flex-col"
+       style="height: 500px;">
+    
+    <!-- Chat Header -->
+    <div class="bg-neuro-purple text-white p-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-robot"></i>
+        <h3 class="font-bold">Neulynx AI Tutor</h3>
+      </div>
+      <div class="flex space-x-2">
+        <button class="text-white/70 hover:text-white">
+          <i class="fas fa-cog"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Chat Messages -->
+    <div class="flex-1 p-4 overflow-y-auto space-y-3" x-ref="messagesContainer">
+      <template x-for="(message, index) in messages" :key="index">
+        <div :class="{
+          'flex justify-end': message.sender === 'user',
+          'flex justify-start': message.sender === 'bot'
+        }">
+          <div :class="{
+            'bg-primary text-white rounded-l-xl rounded-tr-xl px-4 py-2 max-w-xs': message.sender === 'user',
+            'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-r-xl rounded-tl-xl px-4 py-2 max-w-xs': message.sender === 'bot'
+          }" x-text="message.text">
+          </div>
+        </div>
+      </template>
+      
+      <!-- Typing Indicator -->
+      <div x-show="botTyping" class="flex justify-start">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-r-xl rounded-tl-xl px-4 py-2 flex space-x-1">
+          <div class="h-2 w-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s"></div>
+          <div class="h-2 w-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+          <div class="h-2 w-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Chat Input -->
+    <div class="p-4 border-t dark:border-gray-700">
+      <form @submit.prevent="
+        if (userInput.trim()) {
+          messages.push({sender: 'user', text: userInput});
+          $nextTick(() => $refs.messagesContainer.scrollTop = $refs.messagesContainer.scrollHeight);
+          loading = true;
+          botTyping = true;
+          
+          // Simple AI response - we'll enhance this next
+          setTimeout(() => {
+            const response = getAIResponse(userInput);
+            messages.push({sender: 'bot', text: response});
+            loading = false;
+            botTyping = false;
+            $nextTick(() => $refs.messagesContainer.scrollTop = $refs.messagesContainer.scrollHeight);
+          }, 1000);
+          
+          userInput = '';
+        }
+      " class="flex space-x-2">
+        <input x-model="userInput" type="text" placeholder="Ask me anything..." 
+               class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+        <button type="submit" class="px-4 py-2 bg-neuro-purple hover:bg-neuro-purple/90 text-white rounded-lg">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+      <!-- Settings Page -->
+      <div x-show="currentPage === 'settings'" x-transition class="page-transition">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">Settings</h2>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden mb-8">
+          <div class="p-6 border-b dark:border-gray-700">
+            <h3 class="font-bold dark:text-white">Account Settings</h3>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Full Name</label>
+                <input type="text" value="Ritika Bobhate" 
+                       class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Email</label>
+                <input type="email" value="ritika@neulynx.edu" 
+                       class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Timezone</label>
+                <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+                  <option>(UTC+05:30) India Standard Time</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Theme</label>
+                <div class="flex items-center space-x-4">
+                  <button @click="darkMode = false" class="px-4 py-2 border rounded-lg" :class="{ 'bg-primary text-white': !darkMode }">
+                    Light
+                  </button>
+                  <button @click="darkMode = true" class="px-4 py-2 border rounded-lg" :class="{ 'bg-primary text-white': darkMode }">
+                    Dark
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg">
+              Save Changes
+            </button>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden">
+            <div class="p-6 border-b dark:border-gray-700">
+              <h3 class="font-bold dark:text-white">EEG Device Settings</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <p class="font-medium dark:text-white">NeuroSky MindWave</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Connected via Bluetooth</p>
+                </div>
+                <span class="h-3 w-3 rounded-full bg-green-500"></span>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="rounded text-primary focus:ring-primary/50 dark:bg-gray-700">
+                    <span class="ml-2 text-sm dark:text-gray-300">Enable real-time focus tracking</span>
+                  </label>
+                </div>
+                <div>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="rounded text-primary focus:ring-primary/50 dark:bg-gray-700" checked>
+                    <span class="ml-2 text-sm dark:text-gray-300">Adaptive difficulty based on EEG</span>
+                  </label>
+                </div>
+              </div>
+              <button class="mt-6 px-4 py-2 bg-neuro-purple hover:bg-neuro-purple/90 text-white rounded-lg w-full">
+                Calibrate Device
+              </button>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden">
+            <div class="p-6 border-b dark:border-gray-700">
+              <h3 class="font-bold dark:text-white">AI Tutor Preferences</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4">
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Tutor Personality</label>
+                <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600">
+                  <option>Professional</option>
+                  <option>Friendly</option>
+                  <option>Humorous</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-medium mb-1 dark:text-gray-300">Response Speed</label>
+                <input type="range" min="1" max="5" value="3" 
+                       class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                  <span>Fast</span>
+                  <span>Thoughtful</span>
+                </div>
+              </div>
+              <button class="mt-2 px-4 py-2 bg-neuro-teal hover:bg-neuro-teal/90 text-white rounded-lg w-full">
+                Customize Avatar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase Initialization (Replace with your config) -->
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    
+    // Auth State Listener
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("User logged in:", user.email);
+      } else {
+        console.log("User logged out");
+        // window.location.href = "/login";
+      }
+    });
+  </script>
+
+  <!-- Chart Initialization -->
+  <script>
+    // Focus Chart
+    const focusCtx = document.getElementById('focusChart').getContext('2d');
+    new Chart(focusCtx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Focus Level (%)',
+          data: [75, 82, 78, 85, 87, 90, 92],
+          borderColor: '#8B5CF6',
+          backgroundColor: 'rgba(139, 92, 246, 0.1)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+    
+    // Progress Chart
+    const progressCtx = document.getElementById('progressChart').getContext('2d');
+    new Chart(progressCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Math', 'Science', 'History', 'Coding', 'Language'],
+        datasets: [{
+          label: 'Completion %',
+          data: [85, 72, 68, 91, 57],
+          backgroundColor: [
+            'rgba(139, 92, 246, 0.7)',
+            'rgba(20, 184, 166, 0.7)',
+            'rgba(236, 72, 153, 0.7)',
+            'rgba(59, 130, 246, 0.7)',
+            'rgba(245, 158, 11, 0.7)'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+    
+    // Performance Chart
+    const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(performanceCtx, {
+      type: 'line',
+      data: {
+        labels: Array.from({length: 12}, (_, i) => `Week ${i+1}`),
+        datasets: [
+          {
+            label: 'Accuracy',
+            data: [65, 68, 72, 75, 78, 82, 85, 84, 88, 90, 92, 95],
+            borderColor: '#8B5CF6',
+            backgroundColor: 'transparent',
+            yAxisID: 'y'
+          },
+          {
+            label: 'Time Spent (hrs)',
+            data: [5, 6, 7, 6.5, 8, 9, 10, 9.5, 11, 10, 12, 11],
+            borderColor: '#14B8A6',
+            backgroundColor: 'transparent',
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        scales: {
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            title: { display: true, text: 'Accuracy (%)' },
+            max: 100
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            title: { display: true, text: 'Time (hours)' },
+            grid: { drawOnChartArea: false }
+          }
+        }
+      }
+    });
+    // Simple AI Response System
+function getAIResponse(input) {
+  input = input.toLowerCase().trim();
+  
+  // Greetings
+  if (/hello|hi|hey|greetings/.test(input)) {
+    return "Hello! I'm your Neulynx AI tutor. How can I help you with your learning today?";
+  }
+  
+  // Course questions
+  if (/course|class|subject/.test(input)) {
+    if (/neuro|symbolic|ai/.test(input)) {
+      return "The Neuro-Symbolic AI course combines neural networks with symbolic reasoning. Would you like me to explain any specific concept?";
+    }
+    if (/eeg|bci|brain/.test(input)) {
+      return "The EEG & BCI Integration course teaches you to connect brain-computer interfaces with learning systems. It's a hands-on course with practical exercises.";
+    }
+    if (/transformer|gpt|bert|nlp/.test(input)) {
+      return "The Transformer Architectures course covers modern NLP models. We'll explore attention mechanisms and build our own models.";
+    }
+    return "You're currently enrolled in several courses. Would you like details about Neuro-Symbolic AI, EEG Integration, or Transformer Architectures?";
+  }
+  
+  // Progress questions
+  if (/progress|how am i doing|completion/.test(input)) {
+    return "Your overall course completion is at 68%, which is above average! Your strongest subject is Coding at 91% completion.";
+  }
+  
+  // Focus questions
+  if (/focus|concentration|attention/.test(input)) {
+    return "Your average focus level is 87%. Your best session was 92% - great job! Try minimizing distractions to maintain high focus.";
+  }
+  
+  // Help
+  if (/help|support/.test(input)) {
+    return "I can help with: course explanations, progress tracking, focus tips, and learning recommendations. What do you need?";
+  }
+  
+  // Default responses
+  const defaultResponses = [
+    "I'm designed to assist with your learning journey. Could you rephrase your question?",
+    "That's an interesting point! Could you provide more details so I can help better?",
+    "I specialize in educational support. Ask me about your courses, progress, or learning strategies.",
+    "I'm still learning too! Try asking about your courses or progress metrics."
+  ];
+  
+  return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+}
+
+// Initialize with welcome message when chat opens
+document.addEventListener('alpine:init', () => {
+  Alpine.data('chatbot', () => ({
+    init() {
+      this.$watch('chatOpen', (open) => {
+        if (open && this.messages.length === 0) {
+          this.messages.push({
+            sender: 'bot',
+            text: "Hello! I'm your Neulynx AI tutor. How can I assist with your learning today?"
+          });
+        }
+      });
+    }
+  }));
+});
+    
+    // Focus Distribution Chart
+    const focusDistCtx = document.getElementById('focusDistributionChart').getContext('2d');
+    new Chart(focusDistCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['High Focus', 'Medium Focus', 'Low Focus'],
+        datasets: [{
+          data: [45, 35, 20],
+          backgroundColor: [
+            '#8B5CF6',
+            '#14B8A6',
+            '#EC4899'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+
+  <!-- Form Handling Example -->
+  <script>
+    // Example form submission
+    document.addEventListener('DOMContentLoaded', () => {
+      // Login form handler
+      const loginForm = document.getElementById('loginForm');
+      if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = loginForm.email.value;
+          const password = loginForm.password.value;
+          
+          try {
+            await firebase.auth().signInWithEmailAndPassword(email, password);
+            window.location.href = "/dashboard";
+          } catch (error) {
+            alert(error.message);
+          }
+        });
+      }
+      
+      // Course search handler
+      const courseSearch = document.querySelector('input[placeholder="Search courses..."]');
+      if (courseSearch) {
+        courseSearch.addEventListener('input', (e) => {
+          console.log("Searching for:", e.target.value);
+          // Add actual search/filter logic here
+        });
+      }
+    });
+    
+  </script>
+</body>
+</html>
