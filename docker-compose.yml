@@ -1,0 +1,154 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: neurolynx_postgres
+    environment:
+      POSTGRES_USER: neurolynx
+      POSTGRES_PASSWORD: neurolynx123
+      POSTGRES_DB: neurolynx_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    networks:
+      - neurolynx_network
+
+  # Neo4j Graph Database
+  neo4j:
+    image: neo4j:5.14-community
+    container_name: neurolynx_neo4j
+    environment:
+      NEO4J_AUTH: neo4j/neurolynx123
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*,gds.*
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    networks:
+      - neurolynx_network
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:7-alpine
+    container_name: neurolynx_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - neurolynx_network
+
+  # Keycloak for authentication
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0
+    container_name: neurolynx_keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak_db
+      KC_DB_USERNAME: neurolynx
+      KC_DB_PASSWORD: neurolynx123
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    command: start-dev
+    networks:
+      - neurolynx_network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: neurolynx_backend
+    environment:
+      - POSTGRES_SERVER=postgres
+      - NEO4J_URI=bolt://neo4j:7687
+      - REDIS_HOST=redis
+      - KEYCLOAK_SERVER_URL=http://keycloak:8080
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - postgres
+      - neo4j
+      - redis
+      - keycloak
+    networks:
+      - neurolynx_network
+    # Disable reload to avoid memory issues in demo
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --use-colors
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+  # React Frontend (Development)
+  frontend:
+    build:
+      context: ./frontend-react
+      dockerfile: Dockerfile.dev
+    container_name: neurolynx_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend-react:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+    networks:
+      - neurolynx_network
+
+  # MinIO for object storage
+  minio:
+    image: minio/minio:latest
+    container_name: neurolynx_minio
+    environment:
+      MINIO_ROOT_USER: neurolynx
+      MINIO_ROOT_PASSWORD: neurolynx123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - neurolynx_network
+
+  # Ollama for local LLM hosting
+  ollama:
+    image: ollama/ollama:latest
+    container_name: neurolynx_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - neurolynx_network
+
+volumes:
+  postgres_data:
+  neo4j_data:
+  neo4j_logs:
+  redis_data:
+  minio_data:
+  ollama_data:
+
+networks:
+  neurolynx_network:
+    driver: bridge

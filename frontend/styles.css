@@ -1,0 +1,4 @@
+/* Custom styles if needed */
+.custom-class {
+    @apply bg-purple-500 text-white; /* Tailwind inside CSS! */
+  }

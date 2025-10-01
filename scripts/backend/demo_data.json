@@ -1,0 +1,4593 @@
+{
+  "users": [
+    {
+      "id": "demo_student_1",
+      "username": "alice_chen",
+      "email": "alice.chen@university.edu",
+      "full_name": "Alice Chen",
+      "role": "student",
+      "profile": {
+        "learning_style": "visual",
+        "eeg_profile": "student_focused",
+        "grade_level": "undergraduate",
+        "major": "Computer Science",
+        "year": 3,
+        "gpa": 3.7,
+        "study_preferences": {
+          "preferred_time": "morning",
+          "session_length": 45,
+          "break_frequency": 25
+        }
+      },
+      "stats": {
+        "total_study_hours": 156,
+        "courses_completed": 8,
+        "current_courses": 4,
+        "avg_attention_score": 75.2,
+        "avg_focus_score": 72.8,
+        "learning_streak": 12
+      },
+      "created_at": "2024-01-10T08:00:00Z",
+      "last_active": "2024-01-20T14:30:00Z"
+    },
+    {
+      "id": "demo_student_2",
+      "username": "marcus_johnson",
+      "email": "marcus.j@university.edu",
+      "full_name": "Marcus Johnson",
+      "role": "student",
+      "profile": {
+        "learning_style": "kinesthetic",
+        "eeg_profile": "student_adhd",
+        "grade_level": "undergraduate",
+        "major": "Psychology",
+        "year": 2,
+        "gpa": 3.2,
+        "study_preferences": {
+          "preferred_time": "afternoon",
+          "session_length": 30,
+          "break_frequency": 15
+        }
+      },
+      "stats": {
+        "total_study_hours": 89,
+        "courses_completed": 4,
+        "current_courses": 5,
+        "avg_attention_score": 58.4,
+        "avg_focus_score": 52.1,
+        "learning_streak": 3
+      },
+      "created_at": "2024-01-05T10:15:00Z",
+      "last_active": "2024-01-20T16:45:00Z"
+    },
+    {
+      "id": "demo_student_3",
+      "username": "sarah_williams",
+      "email": "sarah.w@university.edu",
+      "full_name": "Sarah Williams",
+      "role": "student",
+      "profile": {
+        "learning_style": "auditory",
+        "eeg_profile": "student_average",
+        "grade_level": "graduate",
+        "major": "Neuroscience",
+        "year": 1,
+        "gpa": 3.9,
+        "study_preferences": {
+          "preferred_time": "evening",
+          "session_length": 60,
+          "break_frequency": 30
+        }
+      },
+      "stats": {
+        "total_study_hours": 203,
+        "courses_completed": 12,
+        "current_courses": 3,
+        "avg_attention_score": 82.1,
+        "avg_focus_score": 79.6,
+        "learning_streak": 18
+      },
+      "created_at": "2023-12-15T09:30:00Z",
+      "last_active": "2024-01-20T20:15:00Z"
+    },
+    {
+      "id": "demo_educator_1",
+      "username": "prof_martinez",
+      "email": "dr.martinez@university.edu",
+      "full_name": "Dr. Elena Martinez",
+      "role": "educator",
+      "profile": {
+        "department": "Computer Science",
+        "title": "Associate Professor",
+        "specialization": [
+          "Machine Learning",
+          "Neural Networks",
+          "AI Ethics"
+        ],
+        "years_experience": 8,
+        "courses_taught": 15
+      },
+      "stats": {
+        "active_courses": 3,
+        "total_students": 127,
+        "avg_course_rating": 4.7,
+        "research_papers": 23
+      },
+      "created_at": "2023-08-20T12:00:00Z",
+      "last_active": "2024-01-20T11:30:00Z"
+    },
+    {
+      "id": "demo_admin_1",
+      "username": "admin_system",
+      "email": "admin@neurolynx.edu",
+      "full_name": "System Administrator",
+      "role": "admin",
+      "profile": {
+        "permissions": [
+          "user_management",
+          "system_config",
+          "analytics_access",
+          "course_management"
+        ],
+        "department": "IT Services"
+      },
+      "created_at": "2023-06-01T00:00:00Z",
+      "last_active": "2024-01-20T08:00:00Z"
+    }
+  ],
+  "courses": [
+    {
+      "id": "cs_ml_101",
+      "title": "Introduction to Machine Learning",
+      "description": "Fundamental concepts of machine learning including supervised and unsupervised learning, neural networks, and practical applications.",
+      "instructor_id": "demo_educator_1",
+      "instructor_name": "Dr. Elena Martinez",
+      "category": "Computer Science",
+      "level": "intermediate",
+      "duration_weeks": 12,
+      "estimated_hours": 120,
+      "modules": [
+        {
+          "id": "ml_module_1",
+          "title": "Introduction to ML Concepts",
+          "description": "Basic terminology and types of machine learning",
+          "order": 1,
+          "estimated_time": 180,
+          "content_type": "video_lecture",
+          "difficulty": 0.3,
+          "engagement_score": 0.8,
+          "topics": [
+            "supervised learning",
+            "unsupervised learning",
+            "reinforcement learning"
+          ]
+        },
+        {
+          "id": "ml_module_2",
+          "title": "Linear Regression and Classification",
+          "description": "Understanding linear models for prediction and classification",
+          "order": 2,
+          "estimated_time": 240,
+          "content_type": "interactive_tutorial",
+          "difficulty": 0.5,
+          "engagement_score": 0.7,
+          "topics": [
+            "linear regression",
+            "logistic regression",
+            "gradient descent"
+          ]
+        },
+        {
+          "id": "ml_module_3",
+          "title": "Neural Networks Fundamentals",
+          "description": "Introduction to artificial neural networks and deep learning",
+          "order": 3,
+          "estimated_time": 300,
+          "content_type": "hands_on_lab",
+          "difficulty": 0.8,
+          "engagement_score": 0.9,
+          "topics": [
+            "perceptrons",
+            "backpropagation",
+            "activation functions"
+          ]
+        }
+      ],
+      "enrollment_count": 89,
+      "rating": 4.6,
+      "prerequisites": [
+        "basic_programming",
+        "statistics_101"
+      ],
+      "learning_objectives": [
+        "Understand fundamental ML concepts",
+        "Implement basic ML algorithms",
+        "Evaluate model performance",
+        "Apply ML to real-world problems"
+      ]
+    },
+    {
+      "id": "neuro_101",
+      "title": "Cognitive Neuroscience Fundamentals",
+      "description": "Explore the biological basis of cognition, learning, and memory through modern neuroscience research.",
+      "instructor_id": "demo_educator_1",
+      "instructor_name": "Dr. Elena Martinez",
+      "category": "Neuroscience",
+      "level": "beginner",
+      "duration_weeks": 10,
+      "estimated_hours": 80,
+      "modules": [
+        {
+          "id": "neuro_module_1",
+          "title": "Brain Structure and Function",
+          "description": "Overview of brain anatomy and basic neural processes",
+          "order": 1,
+          "estimated_time": 150,
+          "content_type": "interactive_3d",
+          "difficulty": 0.4,
+          "engagement_score": 0.9,
+          "topics": [
+            "neurons",
+            "synapses",
+            "brain regions"
+          ]
+        },
+        {
+          "id": "neuro_module_2",
+          "title": "Learning and Memory Systems",
+          "description": "How the brain encodes, stores, and retrieves information",
+          "order": 2,
+          "estimated_time": 200,
+          "content_type": "case_studies",
+          "difficulty": 0.6,
+          "engagement_score": 0.8,
+          "topics": [
+            "hippocampus",
+            "working memory",
+            "long-term potentiation"
+          ]
+        }
+      ],
+      "enrollment_count": 67,
+      "rating": 4.8,
+      "prerequisites": [
+        "biology_basics"
+      ],
+      "learning_objectives": [
+        "Understand brain structure and function",
+        "Explain neural basis of learning",
+        "Analyze memory formation processes"
+      ]
+    },
+    {
+      "id": "ai_ethics_201",
+      "title": "AI Ethics and Society",
+      "description": "Critical examination of ethical implications of artificial intelligence in modern society.",
+      "instructor_id": "demo_educator_1",
+      "instructor_name": "Dr. Elena Martinez",
+      "category": "Ethics",
+      "level": "advanced",
+      "duration_weeks": 8,
+      "estimated_hours": 60,
+      "modules": [
+        {
+          "id": "ethics_module_1",
+          "title": "Bias in AI Systems",
+          "description": "Understanding and mitigating algorithmic bias",
+          "order": 1,
+          "estimated_time": 120,
+          "content_type": "discussion_forum",
+          "difficulty": 0.7,
+          "engagement_score": 0.6,
+          "topics": [
+            "algorithmic bias",
+            "fairness metrics",
+            "bias mitigation"
+          ]
+        }
+      ],
+      "enrollment_count": 34,
+      "rating": 4.9,
+      "prerequisites": [
+        "cs_ml_101"
+      ],
+      "learning_objectives": [
+        "Identify ethical issues in AI",
+        "Evaluate bias in algorithms",
+        "Propose ethical AI solutions"
+      ]
+    }
+  ],
+  "learning_sessions": [
+    {
+      "id": "session_demo_student_1_20250905_193800",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-05T19:38:00",
+      "end_time": "2025-09-05T20:42:00",
+      "duration_minutes": 64,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 100,
+        "avg_focus": 79.06304985418016,
+        "peak_attention": 100,
+        "attention_stability": 66,
+        "focus_episodes": 7,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 71,
+        "time_on_task": 92,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250905_152100",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-05T15:21:00",
+      "end_time": "2025-09-05T15:36:00",
+      "duration_minutes": 15,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 96.98791547669967,
+        "avg_focus": 95.47028523338518,
+        "peak_attention": 100,
+        "attention_stability": 68,
+        "focus_episodes": 8,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 86,
+        "quiz_score": 80,
+        "time_on_task": 85,
+        "interaction_count": 23
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-05T15:27:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250905_104800",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-09-05T10:48:00",
+      "end_time": "2025-09-05T11:09:00",
+      "duration_minutes": 21,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 55.13367201148532,
+        "avg_focus": 63.13936073896158,
+        "peak_attention": 61.13367201148532,
+        "attention_stability": 74,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": null,
+        "time_on_task": 94,
+        "interaction_count": 13
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250905_123100",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-05T12:31:00",
+      "end_time": "2025-09-05T13:38:00",
+      "duration_minutes": 67,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 21.866969390425233,
+        "avg_focus": 42.5052018579093,
+        "peak_attention": 34.86696939042523,
+        "attention_stability": 74,
+        "focus_episodes": 4,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 94,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 23
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-05T13:27:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250905_091700",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-05T09:17:00",
+      "end_time": "2025-09-05T10:21:00",
+      "duration_minutes": 64,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 48.136991513137644,
+        "avg_focus": 52.612990023774245,
+        "peak_attention": 62.136991513137644,
+        "attention_stability": 68,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 99,
+        "quiz_score": 74,
+        "time_on_task": 82,
+        "interaction_count": 23
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-05T10:08:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250904_113500",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-09-04T11:35:00",
+      "end_time": "2025-09-04T12:59:00",
+      "duration_minutes": 84,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 83.335582258274,
+        "avg_focus": 42.985108473035055,
+        "peak_attention": 100,
+        "attention_stability": 92,
+        "focus_episodes": 4,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": 66,
+        "time_on_task": 85,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250904_200600",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-09-04T20:06:00",
+      "end_time": "2025-09-04T21:09:00",
+      "duration_minutes": 63,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 90.84596146627199,
+        "avg_focus": 67.52471774795899,
+        "peak_attention": 100,
+        "attention_stability": 80,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 97,
+        "quiz_score": 74,
+        "time_on_task": 91,
+        "interaction_count": 9
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-04T20:38:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250904_135100",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-09-04T13:51:00",
+      "end_time": "2025-09-04T15:13:00",
+      "duration_minutes": 82,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 64.04350526614044,
+        "avg_focus": 68.74246794135365,
+        "peak_attention": 84.04350526614044,
+        "attention_stability": 78,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 76,
+        "quiz_score": 61,
+        "time_on_task": 95,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-04T14:51:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250904_153700",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-09-04T15:37:00",
+      "end_time": "2025-09-04T16:28:00",
+      "duration_minutes": 51,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 28.181790761481693,
+        "avg_focus": 28.771610004965773,
+        "peak_attention": 48.18179076148169,
+        "attention_stability": 66,
+        "focus_episodes": 6,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 86,
+        "quiz_score": 93,
+        "time_on_task": 81,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250904_104100",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-04T10:41:00",
+      "end_time": "2025-09-04T11:33:00",
+      "duration_minutes": 52,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 72.12275396814653,
+        "avg_focus": 27.00522014567415,
+        "peak_attention": 84.12275396814653,
+        "attention_stability": 92,
+        "focus_episodes": 8,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": 68,
+        "time_on_task": 93,
+        "interaction_count": 21
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250903_080000",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-09-03T08:00:00",
+      "end_time": "2025-09-03T09:30:00",
+      "duration_minutes": 90,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 38.711687690136124,
+        "avg_focus": 25.22773578475598,
+        "peak_attention": 50.711687690136124,
+        "attention_stability": 65,
+        "focus_episodes": 4,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 6
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-03T09:15:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250903_080000",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-03T08:00:00",
+      "end_time": "2025-09-03T08:28:00",
+      "duration_minutes": 28,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 29.968334523590407,
+        "avg_focus": 35.30849705600272,
+        "peak_attention": 39.96833452359041,
+        "attention_stability": 63,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 80,
+        "quiz_score": 78,
+        "time_on_task": 88,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-03T08:09:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250903_130400",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-09-03T13:04:00",
+      "end_time": "2025-09-03T13:36:00",
+      "duration_minutes": 32,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 85.11819738335826,
+        "avg_focus": 47.58618227726828,
+        "peak_attention": 100,
+        "attention_stability": 74,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": null,
+        "time_on_task": 98,
+        "interaction_count": 5
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250903_085300",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-03T08:53:00",
+      "end_time": "2025-09-03T10:15:00",
+      "duration_minutes": 82,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 57.64204667508363,
+        "avg_focus": 59.71258886119895,
+        "peak_attention": 73.64204667508363,
+        "attention_stability": 88,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": 62,
+        "time_on_task": 83,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250903_190400",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-09-03T19:04:00",
+      "end_time": "2025-09-03T20:14:00",
+      "duration_minutes": 70,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 73.56106051112337,
+        "avg_focus": 31.918017272128388,
+        "peak_attention": 81.56106051112337,
+        "attention_stability": 68,
+        "focus_episodes": 8,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 82,
+        "quiz_score": 71,
+        "time_on_task": 89,
+        "interaction_count": 11
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250902_090900",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-09-02T09:09:00",
+      "end_time": "2025-09-02T10:39:00",
+      "duration_minutes": 90,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 63.288407595959185,
+        "avg_focus": 55.596643685227406,
+        "peak_attention": 78.28840759595919,
+        "attention_stability": 86,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 83,
+        "quiz_score": 91,
+        "time_on_task": 87,
+        "interaction_count": 24
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250902_154100",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-02T15:41:00",
+      "end_time": "2025-09-02T16:52:00",
+      "duration_minutes": 71,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 73.13830347913026,
+        "avg_focus": 63.775872681561424,
+        "peak_attention": 93.13830347913026,
+        "attention_stability": 67,
+        "focus_episodes": 2,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 92,
+        "quiz_score": null,
+        "time_on_task": 82,
+        "interaction_count": 20
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250902_125200",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-02T12:52:00",
+      "end_time": "2025-09-02T14:14:00",
+      "duration_minutes": 82,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 38.72894210503224,
+        "avg_focus": 65.38270095141476,
+        "peak_attention": 47.72894210503224,
+        "attention_stability": 95,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": 89,
+        "time_on_task": 93,
+        "interaction_count": 7
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-02T13:37:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250902_121300",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-09-02T12:13:00",
+      "end_time": "2025-09-02T13:29:00",
+      "duration_minutes": 76,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 41.453253822942564,
+        "avg_focus": 34.723712021911496,
+        "peak_attention": 60.453253822942564,
+        "attention_stability": 75,
+        "focus_episodes": 8,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": null,
+        "time_on_task": 83,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250902_092400",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-02T09:24:00",
+      "end_time": "2025-09-02T10:11:00",
+      "duration_minutes": 47,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 10.509017319981137,
+        "avg_focus": 49.73851014417946,
+        "peak_attention": 17.509017319981137,
+        "attention_stability": 95,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": null,
+        "time_on_task": 95,
+        "interaction_count": 20
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250902_081700",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-09-02T08:17:00",
+      "end_time": "2025-09-02T09:26:00",
+      "duration_minutes": 69,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 25.500902559785622,
+        "avg_focus": 42.056225816838946,
+        "peak_attention": 39.50090255978562,
+        "attention_stability": 83,
+        "focus_episodes": 7,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 98,
+        "quiz_score": null,
+        "time_on_task": 92,
+        "interaction_count": 21
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-02T08:39:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250901_114500",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-09-01T11:45:00",
+      "end_time": "2025-09-01T13:05:00",
+      "duration_minutes": 80,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 38.958736741530615,
+        "avg_focus": 50.71593925501972,
+        "peak_attention": 47.958736741530615,
+        "attention_stability": 95,
+        "focus_episodes": 3,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": 93,
+        "time_on_task": 88,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250901_200000",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-09-01T20:00:00",
+      "end_time": "2025-09-01T20:37:00",
+      "duration_minutes": 37,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 10,
+        "avg_focus": 32.895530445740846,
+        "peak_attention": 19.822817183328084,
+        "attention_stability": 64,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 68,
+        "time_on_task": 85,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250901_193300",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-09-01T19:33:00",
+      "end_time": "2025-09-01T20:53:00",
+      "duration_minutes": 80,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 50.93243624896568,
+        "avg_focus": 58.60535324107894,
+        "peak_attention": 61.93243624896568,
+        "attention_stability": 90,
+        "focus_episodes": 8,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 81,
+        "quiz_score": 61,
+        "time_on_task": 96,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-01T19:39:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250901_170000",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-09-01T17:00:00",
+      "end_time": "2025-09-01T18:19:00",
+      "duration_minutes": 79,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 59.26051514614255,
+        "avg_focus": 57.64632314028524,
+        "peak_attention": 64.26051514614255,
+        "attention_stability": 94,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": 66,
+        "time_on_task": 91,
+        "interaction_count": 9
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-01T17:10:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250901_180900",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-09-01T18:09:00",
+      "end_time": "2025-09-01T19:28:00",
+      "duration_minutes": 79,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 60.98397774164473,
+        "avg_focus": 54.59589206115058,
+        "peak_attention": 67.98397774164474,
+        "attention_stability": 94,
+        "focus_episodes": 7,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 91,
+        "quiz_score": 61,
+        "time_on_task": 92,
+        "interaction_count": 6
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-09-01T19:06:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250831_150000",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-31T15:00:00",
+      "end_time": "2025-08-31T16:20:00",
+      "duration_minutes": 80,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 67.17927691358045,
+        "avg_focus": 75.35356779425067,
+        "peak_attention": 80.17927691358045,
+        "attention_stability": 66,
+        "focus_episodes": 2,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 71,
+        "quiz_score": 93,
+        "time_on_task": 80,
+        "interaction_count": 11
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250831_205300",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-31T20:53:00",
+      "end_time": "2025-08-31T22:00:00",
+      "duration_minutes": 67,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 80.06463301036027,
+        "avg_focus": 68.7627141457671,
+        "peak_attention": 96.06463301036027,
+        "attention_stability": 75,
+        "focus_episodes": 8,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 94,
+        "quiz_score": 92,
+        "time_on_task": 90,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250831_104100",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-31T10:41:00",
+      "end_time": "2025-08-31T12:03:00",
+      "duration_minutes": 82,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 95.23799949425958,
+        "avg_focus": 72.78461082985866,
+        "peak_attention": 100,
+        "attention_stability": 91,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 21
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250831_131100",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-31T13:11:00",
+      "end_time": "2025-08-31T13:39:00",
+      "duration_minutes": 28,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 42.63133987222958,
+        "avg_focus": 31.295634437079357,
+        "peak_attention": 47.63133987222958,
+        "attention_stability": 68,
+        "focus_episodes": 2,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 89,
+        "time_on_task": 91,
+        "interaction_count": 18
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250831_113600",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-31T11:36:00",
+      "end_time": "2025-08-31T12:04:00",
+      "duration_minutes": 28,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 53.83770258556332,
+        "avg_focus": 32.30760897550525,
+        "peak_attention": 65.83770258556332,
+        "attention_stability": 77,
+        "focus_episodes": 5,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 80,
+        "quiz_score": 85,
+        "time_on_task": 92,
+        "interaction_count": 5
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-31T11:55:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250830_140000",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-30T14:00:00",
+      "end_time": "2025-08-30T15:20:00",
+      "duration_minutes": 80,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 59.808527521081814,
+        "avg_focus": 79.34831750624875,
+        "peak_attention": 65.80852752108181,
+        "attention_stability": 79,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 98,
+        "quiz_score": 69,
+        "time_on_task": 95,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250830_141100",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-30T14:11:00",
+      "end_time": "2025-08-30T15:10:00",
+      "duration_minutes": 59,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 40.37791462610499,
+        "avg_focus": 89.06238054074333,
+        "peak_attention": 53.37791462610499,
+        "attention_stability": 82,
+        "focus_episodes": 6,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 75,
+        "quiz_score": 87,
+        "time_on_task": 90,
+        "interaction_count": 17
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-30T14:53:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250830_115700",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-30T11:57:00",
+      "end_time": "2025-08-30T13:08:00",
+      "duration_minutes": 71,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 90.6964720511179,
+        "avg_focus": 63.17108219641041,
+        "peak_attention": 100,
+        "attention_stability": 74,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 100,
+        "quiz_score": 76,
+        "time_on_task": 82,
+        "interaction_count": 15
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250830_151600",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-30T15:16:00",
+      "end_time": "2025-08-30T15:47:00",
+      "duration_minutes": 31,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 23.28464550254069,
+        "avg_focus": 18.136601456443834,
+        "peak_attention": 39.28464550254069,
+        "attention_stability": 87,
+        "focus_episodes": 3,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": 80,
+        "time_on_task": 90,
+        "interaction_count": 17
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-30T15:33:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250830_114800",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-30T11:48:00",
+      "end_time": "2025-08-30T12:22:00",
+      "duration_minutes": 34,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 35.73995503820416,
+        "avg_focus": 31.343066756057155,
+        "peak_attention": 47.73995503820416,
+        "attention_stability": 63,
+        "focus_episodes": 3,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 70,
+        "quiz_score": 83,
+        "time_on_task": 87,
+        "interaction_count": 17
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-30T12:01:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250830_100800",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-30T10:08:00",
+      "end_time": "2025-08-30T11:05:00",
+      "duration_minutes": 57,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 45.964205921874125,
+        "avg_focus": 25.707342548383544,
+        "peak_attention": 50.964205921874125,
+        "attention_stability": 79,
+        "focus_episodes": 5,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": 91,
+        "time_on_task": 81,
+        "interaction_count": 22
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-30T10:26:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250829_120300",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-29T12:03:00",
+      "end_time": "2025-08-29T13:11:00",
+      "duration_minutes": 68,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 64.49870712851327,
+        "avg_focus": 41.43935933853129,
+        "peak_attention": 74.49870712851327,
+        "attention_stability": 65,
+        "focus_episodes": 7,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 77,
+        "quiz_score": 79,
+        "time_on_task": 91,
+        "interaction_count": 24
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-29T13:03:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250829_203000",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-29T20:30:00",
+      "end_time": "2025-08-29T21:01:00",
+      "duration_minutes": 31,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 69.09530231535595,
+        "avg_focus": 40.52756098418237,
+        "peak_attention": 78.09530231535595,
+        "attention_stability": 83,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 89,
+        "quiz_score": null,
+        "time_on_task": 82,
+        "interaction_count": 17
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-29T20:44:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250829_140600",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-29T14:06:00",
+      "end_time": "2025-08-29T14:36:00",
+      "duration_minutes": 30,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 73.06984942207666,
+        "avg_focus": 47.85843773486762,
+        "peak_attention": 85.06984942207666,
+        "attention_stability": 66,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 90,
+        "quiz_score": 89,
+        "time_on_task": 90,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250829_124700",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-29T12:47:00",
+      "end_time": "2025-08-29T13:41:00",
+      "duration_minutes": 54,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 67.58953894677364,
+        "avg_focus": 44.617436562009104,
+        "peak_attention": 87.58953894677364,
+        "attention_stability": 73,
+        "focus_episodes": 6,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": 95,
+        "time_on_task": 96,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250829_093000",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-29T09:30:00",
+      "end_time": "2025-08-29T09:47:00",
+      "duration_minutes": 17,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 67.37487480272515,
+        "avg_focus": 49.34898944123063,
+        "peak_attention": 82.37487480272515,
+        "attention_stability": 90,
+        "focus_episodes": 6,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 99,
+        "quiz_score": 93,
+        "time_on_task": 95,
+        "interaction_count": 21
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-29T09:41:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250828_145100",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-28T14:51:00",
+      "end_time": "2025-08-28T15:15:00",
+      "duration_minutes": 24,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 29.417999236603805,
+        "avg_focus": 39.84810075795972,
+        "peak_attention": 45.417999236603805,
+        "attention_stability": 74,
+        "focus_episodes": 6,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": null,
+        "time_on_task": 93,
+        "interaction_count": 22
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250828_142800",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-28T14:28:00",
+      "end_time": "2025-08-28T15:55:00",
+      "duration_minutes": 87,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 52.606093579044014,
+        "avg_focus": 44.07385933273743,
+        "peak_attention": 62.606093579044014,
+        "attention_stability": 89,
+        "focus_episodes": 3,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 70,
+        "quiz_score": 75,
+        "time_on_task": 81,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-28T15:34:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250828_124300",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-28T12:43:00",
+      "end_time": "2025-08-28T13:47:00",
+      "duration_minutes": 64,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 28.54270363731277,
+        "avg_focus": 38.75083432154705,
+        "peak_attention": 33.54270363731277,
+        "attention_stability": 80,
+        "focus_episodes": 7,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 98,
+        "quiz_score": 61,
+        "time_on_task": 93,
+        "interaction_count": 7
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-28T13:04:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250828_135900",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-28T13:59:00",
+      "end_time": "2025-08-28T15:03:00",
+      "duration_minutes": 64,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 67.2513301006009,
+        "avg_focus": 37.63695414123694,
+        "peak_attention": 77.2513301006009,
+        "attention_stability": 82,
+        "focus_episodes": 7,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": 61,
+        "time_on_task": 82,
+        "interaction_count": 17
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250828_111500",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-28T11:15:00",
+      "end_time": "2025-08-28T12:37:00",
+      "duration_minutes": 82,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 45.926721527773424,
+        "avg_focus": 55.39816295518837,
+        "peak_attention": 64.92672152777342,
+        "attention_stability": 84,
+        "focus_episodes": 5,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 83,
+        "quiz_score": 76,
+        "time_on_task": 93,
+        "interaction_count": 5
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250827_135800",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-27T13:58:00",
+      "end_time": "2025-08-27T14:43:00",
+      "duration_minutes": 45,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 72.51744897802082,
+        "avg_focus": 53.80153297011887,
+        "peak_attention": 81.51744897802082,
+        "attention_stability": 94,
+        "focus_episodes": 7,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": 61,
+        "time_on_task": 81,
+        "interaction_count": 15
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250827_170700",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-27T17:07:00",
+      "end_time": "2025-08-27T18:03:00",
+      "duration_minutes": 56,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 78.99507264877815,
+        "avg_focus": 63.626096962865496,
+        "peak_attention": 89.99507264877815,
+        "attention_stability": 76,
+        "focus_episodes": 5,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": null,
+        "time_on_task": 88,
+        "interaction_count": 15
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250827_144600",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-27T14:46:00",
+      "end_time": "2025-08-27T15:42:00",
+      "duration_minutes": 56,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 56.638756240570295,
+        "avg_focus": 53.26228410667022,
+        "peak_attention": 61.638756240570295,
+        "attention_stability": 79,
+        "focus_episodes": 4,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": 72,
+        "time_on_task": 81,
+        "interaction_count": 6
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-27T15:25:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250827_143600",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-27T14:36:00",
+      "end_time": "2025-08-27T15:01:00",
+      "duration_minutes": 25,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 60.383801946563324,
+        "avg_focus": 65.66152751773191,
+        "peak_attention": 72.38380194656332,
+        "attention_stability": 62,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": 78,
+        "time_on_task": 81,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250826_110900",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-26T11:09:00",
+      "end_time": "2025-08-26T11:52:00",
+      "duration_minutes": 43,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 65.31218918692807,
+        "avg_focus": 80.35298755586692,
+        "peak_attention": 81.31218918692807,
+        "attention_stability": 64,
+        "focus_episodes": 2,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 71,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250826_083600",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-26T08:36:00",
+      "end_time": "2025-08-26T10:00:00",
+      "duration_minutes": 84,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 46.251279511031825,
+        "avg_focus": 28.740161461899582,
+        "peak_attention": 65.25127951103183,
+        "attention_stability": 94,
+        "focus_episodes": 2,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 92,
+        "quiz_score": 82,
+        "time_on_task": 85,
+        "interaction_count": 14
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250826_080000",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-26T08:00:00",
+      "end_time": "2025-08-26T09:11:00",
+      "duration_minutes": 71,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 54.40132449748563,
+        "avg_focus": 63.35320737152465,
+        "peak_attention": 74.40132449748563,
+        "attention_stability": 60,
+        "focus_episodes": 4,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": null,
+        "time_on_task": 93,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250826_170300",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-26T17:03:00",
+      "end_time": "2025-08-26T17:50:00",
+      "duration_minutes": 47,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 53.08382717415211,
+        "avg_focus": 41.3714521912814,
+        "peak_attention": 65.0838271741521,
+        "attention_stability": 74,
+        "focus_episodes": 4,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 82,
+        "quiz_score": 83,
+        "time_on_task": 97,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250826_171800",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-26T17:18:00",
+      "end_time": "2025-08-26T17:34:00",
+      "duration_minutes": 16,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 58.336415706528705,
+        "avg_focus": 64.46304730550588,
+        "peak_attention": 76.3364157065287,
+        "attention_stability": 71,
+        "focus_episodes": 6,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": 67,
+        "time_on_task": 82,
+        "interaction_count": 5
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-26T17:28:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250825_084000",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-25T08:40:00",
+      "end_time": "2025-08-25T09:50:00",
+      "duration_minutes": 70,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 84.08983958563468,
+        "avg_focus": 78.85199372997447,
+        "peak_attention": 100,
+        "attention_stability": 63,
+        "focus_episodes": 6,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 89,
+        "quiz_score": 63,
+        "time_on_task": 97,
+        "interaction_count": 14
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250825_103700",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-25T10:37:00",
+      "end_time": "2025-08-25T11:42:00",
+      "duration_minutes": 65,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 96.95363858839323,
+        "avg_focus": 99.83335953849505,
+        "peak_attention": 100,
+        "attention_stability": 88,
+        "focus_episodes": 8,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 98,
+        "quiz_score": null,
+        "time_on_task": 80,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250825_201300",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-25T20:13:00",
+      "end_time": "2025-08-25T20:56:00",
+      "duration_minutes": 43,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 64.1885435129532,
+        "avg_focus": 69.4853901965667,
+        "peak_attention": 80.1885435129532,
+        "attention_stability": 93,
+        "focus_episodes": 7,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 77,
+        "quiz_score": 74,
+        "time_on_task": 88,
+        "interaction_count": 5
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250825_083400",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-25T08:34:00",
+      "end_time": "2025-08-25T09:51:00",
+      "duration_minutes": 77,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 49.30423786383049,
+        "avg_focus": 80.98559423617837,
+        "peak_attention": 64.30423786383048,
+        "attention_stability": 73,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 75,
+        "quiz_score": 78,
+        "time_on_task": 94,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250824_142900",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-24T14:29:00",
+      "end_time": "2025-08-24T15:50:00",
+      "duration_minutes": 81,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 88.86677173543619,
+        "avg_focus": 68.09927615624429,
+        "peak_attention": 97.86677173543619,
+        "attention_stability": 77,
+        "focus_episodes": 8,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 95,
+        "quiz_score": 69,
+        "time_on_task": 97,
+        "interaction_count": 9
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250824_153800",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-24T15:38:00",
+      "end_time": "2025-08-24T16:35:00",
+      "duration_minutes": 57,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 59.63838505832731,
+        "avg_focus": 59.95614644613164,
+        "peak_attention": 72.63838505832732,
+        "attention_stability": 82,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 90,
+        "quiz_score": 78,
+        "time_on_task": 81,
+        "interaction_count": 21
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-24T16:12:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250824_115900",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-24T11:59:00",
+      "end_time": "2025-08-24T12:41:00",
+      "duration_minutes": 42,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 53.377932527242095,
+        "avg_focus": 50.036296938163034,
+        "peak_attention": 59.377932527242095,
+        "attention_stability": 64,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 99,
+        "quiz_score": 93,
+        "time_on_task": 84,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250824_183400",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-24T18:34:00",
+      "end_time": "2025-08-24T19:34:00",
+      "duration_minutes": 60,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 33.66126576295573,
+        "avg_focus": 27.963123872909122,
+        "peak_attention": 42.66126576295573,
+        "attention_stability": 69,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": 95,
+        "time_on_task": 93,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250823_084900",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-23T08:49:00",
+      "end_time": "2025-08-23T09:49:00",
+      "duration_minutes": 60,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 22.352033564802866,
+        "avg_focus": 30.814095862540185,
+        "peak_attention": 34.352033564802866,
+        "attention_stability": 60,
+        "focus_episodes": 3,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 89,
+        "quiz_score": 67,
+        "time_on_task": 80,
+        "interaction_count": 20
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250823_122600",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-23T12:26:00",
+      "end_time": "2025-08-23T12:48:00",
+      "duration_minutes": 22,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 49.92124876274394,
+        "avg_focus": 31.39062196471651,
+        "peak_attention": 65.92124876274394,
+        "attention_stability": 68,
+        "focus_episodes": 5,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 99,
+        "quiz_score": null,
+        "time_on_task": 83,
+        "interaction_count": 5
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-23T12:35:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250823_203400",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-23T20:34:00",
+      "end_time": "2025-08-23T21:36:00",
+      "duration_minutes": 62,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 52.231656813319006,
+        "avg_focus": 40.708758905372235,
+        "peak_attention": 64.231656813319,
+        "attention_stability": 83,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": 71,
+        "time_on_task": 85,
+        "interaction_count": 23
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250822_140800",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-22T14:08:00",
+      "end_time": "2025-08-22T14:53:00",
+      "duration_minutes": 45,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 76.22960211191719,
+        "avg_focus": 59.927957043732725,
+        "peak_attention": 92.22960211191719,
+        "attention_stability": 62,
+        "focus_episodes": 2,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 91,
+        "quiz_score": null,
+        "time_on_task": 87,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250822_105600",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-22T10:56:00",
+      "end_time": "2025-08-22T11:33:00",
+      "duration_minutes": 37,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 65.38650265049046,
+        "avg_focus": 80.79983662733032,
+        "peak_attention": 71.38650265049046,
+        "attention_stability": 95,
+        "focus_episodes": 2,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 98,
+        "quiz_score": 95,
+        "time_on_task": 89,
+        "interaction_count": 24
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250822_185100",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-22T18:51:00",
+      "end_time": "2025-08-22T20:15:00",
+      "duration_minutes": 84,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 47.39179821448525,
+        "avg_focus": 81.66960792219187,
+        "peak_attention": 60.39179821448525,
+        "attention_stability": 64,
+        "focus_episodes": 4,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 81,
+        "quiz_score": 89,
+        "time_on_task": 80,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250822_163200",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-22T16:32:00",
+      "end_time": "2025-08-22T17:40:00",
+      "duration_minutes": 68,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 35.316456361918554,
+        "avg_focus": 71.4591216271367,
+        "peak_attention": 54.316456361918554,
+        "attention_stability": 73,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": 64,
+        "time_on_task": 81,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250821_170000",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-21T17:00:00",
+      "end_time": "2025-08-21T17:25:00",
+      "duration_minutes": 25,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 68.39060022463048,
+        "avg_focus": 65.62663114981616,
+        "peak_attention": 87.39060022463048,
+        "attention_stability": 61,
+        "focus_episodes": 3,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 71,
+        "quiz_score": 68,
+        "time_on_task": 90,
+        "interaction_count": 24
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250821_184600",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-21T18:46:00",
+      "end_time": "2025-08-21T20:02:00",
+      "duration_minutes": 76,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 50.57175824428907,
+        "avg_focus": 23.83275111513312,
+        "peak_attention": 58.57175824428907,
+        "attention_stability": 88,
+        "focus_episodes": 4,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 81,
+        "quiz_score": 63,
+        "time_on_task": 93,
+        "interaction_count": 13
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-21T18:59:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250821_111200",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-21T11:12:00",
+      "end_time": "2025-08-21T12:27:00",
+      "duration_minutes": 75,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 10,
+        "avg_focus": 50.75440024429602,
+        "peak_attention": 10,
+        "attention_stability": 79,
+        "focus_episodes": 8,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": 61,
+        "time_on_task": 87,
+        "interaction_count": 5
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250821_143000",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-21T14:30:00",
+      "end_time": "2025-08-21T15:55:00",
+      "duration_minutes": 85,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 44.95624043205642,
+        "avg_focus": 38.55859035658743,
+        "peak_attention": 55.95624043205642,
+        "attention_stability": 82,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 83,
+        "quiz_score": 82,
+        "time_on_task": 91,
+        "interaction_count": 5
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250821_180600",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-21T18:06:00",
+      "end_time": "2025-08-21T19:09:00",
+      "duration_minutes": 63,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 43.79258888837043,
+        "avg_focus": 49.81395341890077,
+        "peak_attention": 57.79258888837043,
+        "attention_stability": 87,
+        "focus_episodes": 3,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 99,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 25
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250820_183300",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-20T18:33:00",
+      "end_time": "2025-08-20T19:00:00",
+      "duration_minutes": 27,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 83.81295633217157,
+        "avg_focus": 74.81862825319115,
+        "peak_attention": 92.81295633217157,
+        "attention_stability": 93,
+        "focus_episodes": 3,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": 78,
+        "time_on_task": 80,
+        "interaction_count": 24
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-20T18:38:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250820_183700",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-20T18:37:00",
+      "end_time": "2025-08-20T20:05:00",
+      "duration_minutes": 88,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 81.43067629626388,
+        "avg_focus": 50.85592989244595,
+        "peak_attention": 94.43067629626388,
+        "attention_stability": 77,
+        "focus_episodes": 8,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 86,
+        "quiz_score": 84,
+        "time_on_task": 93,
+        "interaction_count": 9
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250820_175400",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-20T17:54:00",
+      "end_time": "2025-08-20T19:23:00",
+      "duration_minutes": 89,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 21.346950963144664,
+        "avg_focus": 31.129093613204645,
+        "peak_attention": 28.346950963144664,
+        "attention_stability": 89,
+        "focus_episodes": 4,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": null,
+        "time_on_task": 95,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250820_130400",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-20T13:04:00",
+      "end_time": "2025-08-20T13:51:00",
+      "duration_minutes": 47,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 43.304325430716524,
+        "avg_focus": 39.84263032593571,
+        "peak_attention": 51.304325430716524,
+        "attention_stability": 90,
+        "focus_episodes": 6,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": 72,
+        "time_on_task": 87,
+        "interaction_count": 9
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250820_124200",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-20T12:42:00",
+      "end_time": "2025-08-20T13:04:00",
+      "duration_minutes": 22,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 57.486841823798486,
+        "avg_focus": 45.51586214520618,
+        "peak_attention": 74.48684182379849,
+        "attention_stability": 69,
+        "focus_episodes": 5,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 71,
+        "quiz_score": 92,
+        "time_on_task": 87,
+        "interaction_count": 13
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-20T12:53:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250819_123700",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-19T12:37:00",
+      "end_time": "2025-08-19T13:22:00",
+      "duration_minutes": 45,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 52.592537081511054,
+        "avg_focus": 57.33742565535805,
+        "peak_attention": 64.59253708151105,
+        "attention_stability": 74,
+        "focus_episodes": 4,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 75,
+        "quiz_score": 65,
+        "time_on_task": 90,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-19T13:09:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250819_164800",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-19T16:48:00",
+      "end_time": "2025-08-19T18:13:00",
+      "duration_minutes": 85,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 65.75351553893975,
+        "avg_focus": 51.996088423730484,
+        "peak_attention": 74.75351553893975,
+        "attention_stability": 87,
+        "focus_episodes": 7,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 94,
+        "quiz_score": 89,
+        "time_on_task": 85,
+        "interaction_count": 22
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-19T17:22:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250818_110100",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-18T11:01:00",
+      "end_time": "2025-08-18T11:16:00",
+      "duration_minutes": 15,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 49.665066188892396,
+        "avg_focus": 31.869896069376296,
+        "peak_attention": 59.665066188892396,
+        "attention_stability": 82,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 100,
+        "quiz_score": null,
+        "time_on_task": 89,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250818_205700",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-18T20:57:00",
+      "end_time": "2025-08-18T21:49:00",
+      "duration_minutes": 52,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 32.09292029226795,
+        "avg_focus": 32.05511398744332,
+        "peak_attention": 43.09292029226795,
+        "attention_stability": 76,
+        "focus_episodes": 3,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": 60,
+        "time_on_task": 97,
+        "interaction_count": 8
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250818_173600",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-18T17:36:00",
+      "end_time": "2025-08-18T18:23:00",
+      "duration_minutes": 47,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 53.77923807731307,
+        "avg_focus": 40.27616302038615,
+        "peak_attention": 60.77923807731307,
+        "attention_stability": 63,
+        "focus_episodes": 8,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 75,
+        "time_on_task": 82,
+        "interaction_count": 17
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-18T17:57:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250818_153300",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-18T15:33:00",
+      "end_time": "2025-08-18T16:41:00",
+      "duration_minutes": 68,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 57.3097010061179,
+        "avg_focus": 44.66399324740718,
+        "peak_attention": 64.3097010061179,
+        "attention_stability": 76,
+        "focus_episodes": 6,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": 90,
+        "time_on_task": 83,
+        "interaction_count": 18
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250818_175300",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-18T17:53:00",
+      "end_time": "2025-08-18T18:17:00",
+      "duration_minutes": 24,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 75.12773117275098,
+        "avg_focus": 53.01717281616605,
+        "peak_attention": 85.12773117275098,
+        "attention_stability": 87,
+        "focus_episodes": 2,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 70,
+        "quiz_score": 92,
+        "time_on_task": 88,
+        "interaction_count": 23
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250817_145100",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-17T14:51:00",
+      "end_time": "2025-08-17T15:10:00",
+      "duration_minutes": 19,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 52.06142747272327,
+        "avg_focus": 52.03077564042509,
+        "peak_attention": 62.06142747272327,
+        "attention_stability": 82,
+        "focus_episodes": 6,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 81,
+        "quiz_score": 65,
+        "time_on_task": 94,
+        "interaction_count": 7
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-17T15:00:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250817_203800",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-17T20:38:00",
+      "end_time": "2025-08-17T20:55:00",
+      "duration_minutes": 17,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 45.894807422452686,
+        "avg_focus": 18.173470719376667,
+        "peak_attention": 62.894807422452686,
+        "attention_stability": 88,
+        "focus_episodes": 7,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": null,
+        "time_on_task": 95,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-17T20:47:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250817_095600",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-17T09:56:00",
+      "end_time": "2025-08-17T11:23:00",
+      "duration_minutes": 87,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 52.12321768735167,
+        "avg_focus": 42.80735723568876,
+        "peak_attention": 72.12321768735167,
+        "attention_stability": 87,
+        "focus_episodes": 2,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": null,
+        "time_on_task": 96,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250816_162700",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-16T16:27:00",
+      "end_time": "2025-08-16T16:43:00",
+      "duration_minutes": 16,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 67.26217546253649,
+        "avg_focus": 71.69831165333578,
+        "peak_attention": 75.26217546253649,
+        "attention_stability": 70,
+        "focus_episodes": 5,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 70,
+        "quiz_score": 80,
+        "time_on_task": 97,
+        "interaction_count": 15
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250816_132700",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-16T13:27:00",
+      "end_time": "2025-08-16T14:43:00",
+      "duration_minutes": 76,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 91.67098889351348,
+        "avg_focus": 65.8768512062685,
+        "peak_attention": 97.67098889351348,
+        "attention_stability": 66,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 71,
+        "time_on_task": 85,
+        "interaction_count": 11
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250816_144000",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-16T14:40:00",
+      "end_time": "2025-08-16T15:15:00",
+      "duration_minutes": 35,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 43.18347385804764,
+        "avg_focus": 44.591881775866675,
+        "peak_attention": 62.18347385804764,
+        "attention_stability": 71,
+        "focus_episodes": 6,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 91,
+        "quiz_score": 82,
+        "time_on_task": 91,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250816_192400",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-16T19:24:00",
+      "end_time": "2025-08-16T20:48:00",
+      "duration_minutes": 84,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 54.46406727607297,
+        "avg_focus": 31.14222820486153,
+        "peak_attention": 60.46406727607297,
+        "attention_stability": 76,
+        "focus_episodes": 4,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": 67,
+        "time_on_task": 94,
+        "interaction_count": 23
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-16T20:08:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250816_105400",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-16T10:54:00",
+      "end_time": "2025-08-16T11:10:00",
+      "duration_minutes": 16,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 61.19286791180157,
+        "avg_focus": 58.80039571020191,
+        "peak_attention": 76.19286791180157,
+        "attention_stability": 60,
+        "focus_episodes": 2,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 90,
+        "quiz_score": 71,
+        "time_on_task": 88,
+        "interaction_count": 23
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250815_132700",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-15T13:27:00",
+      "end_time": "2025-08-15T13:42:00",
+      "duration_minutes": 15,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 77.10002317546939,
+        "avg_focus": 78.70477656401287,
+        "peak_attention": 89.10002317546939,
+        "attention_stability": 75,
+        "focus_episodes": 7,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 79,
+        "quiz_score": null,
+        "time_on_task": 86,
+        "interaction_count": 7
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T13:34:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250815_100000",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-15T10:00:00",
+      "end_time": "2025-08-15T11:11:00",
+      "duration_minutes": 71,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 86.33413708926582,
+        "avg_focus": 67.73779000375316,
+        "peak_attention": 98.33413708926582,
+        "attention_stability": 68,
+        "focus_episodes": 6,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": 61,
+        "time_on_task": 98,
+        "interaction_count": 12
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T10:38:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250815_200100",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-15T20:01:00",
+      "end_time": "2025-08-15T21:07:00",
+      "duration_minutes": 66,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 53.38039095117269,
+        "avg_focus": 79.30370889208038,
+        "peak_attention": 59.38039095117269,
+        "attention_stability": 95,
+        "focus_episodes": 6,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 95,
+        "quiz_score": 68,
+        "time_on_task": 81,
+        "interaction_count": 18
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T20:21:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250815_170700",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-15T17:07:00",
+      "end_time": "2025-08-15T17:27:00",
+      "duration_minutes": 20,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 10,
+        "avg_focus": 23.276214862513385,
+        "peak_attention": 20.911955637285622,
+        "attention_stability": 78,
+        "focus_episodes": 3,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 92,
+        "quiz_score": 71,
+        "time_on_task": 89,
+        "interaction_count": 21
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T17:12:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250815_121800",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-15T12:18:00",
+      "end_time": "2025-08-15T12:52:00",
+      "duration_minutes": 34,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 52.89090735978692,
+        "avg_focus": 32.24635190093524,
+        "peak_attention": 59.89090735978692,
+        "attention_stability": 79,
+        "focus_episodes": 8,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": 88,
+        "time_on_task": 91,
+        "interaction_count": 24
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T12:35:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250815_095200",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-15T09:52:00",
+      "end_time": "2025-08-15T10:37:00",
+      "duration_minutes": 45,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 25.090552333517053,
+        "avg_focus": 54.11723617247549,
+        "peak_attention": 36.09055233351705,
+        "attention_stability": 84,
+        "focus_episodes": 6,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 82,
+        "quiz_score": 82,
+        "time_on_task": 93,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250815_164500",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-15T16:45:00",
+      "end_time": "2025-08-15T17:50:00",
+      "duration_minutes": 65,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 73.80562033707318,
+        "avg_focus": 63.15867784997723,
+        "peak_attention": 82.80562033707318,
+        "attention_stability": 94,
+        "focus_episodes": 8,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 97,
+        "quiz_score": null,
+        "time_on_task": 86,
+        "interaction_count": 7
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T17:06:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250815_091900",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-15T09:19:00",
+      "end_time": "2025-08-15T10:14:00",
+      "duration_minutes": 55,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 91.43623397509074,
+        "avg_focus": 34.649857460689105,
+        "peak_attention": 100,
+        "attention_stability": 83,
+        "focus_episodes": 3,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": null,
+        "time_on_task": 89,
+        "interaction_count": 5
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-15T09:54:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250814_163700",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-14T16:37:00",
+      "end_time": "2025-08-14T17:38:00",
+      "duration_minutes": 61,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 80.8582933342188,
+        "avg_focus": 69.45500827946009,
+        "peak_attention": 97.8582933342188,
+        "attention_stability": 69,
+        "focus_episodes": 2,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 97,
+        "quiz_score": 64,
+        "time_on_task": 80,
+        "interaction_count": 12
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-14T17:23:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250814_123500",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-14T12:35:00",
+      "end_time": "2025-08-14T13:33:00",
+      "duration_minutes": 58,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 83.45942367680296,
+        "avg_focus": 77.37637764562965,
+        "peak_attention": 99.45942367680296,
+        "attention_stability": 64,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": 62,
+        "time_on_task": 89,
+        "interaction_count": 10
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250814_184500",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-14T18:45:00",
+      "end_time": "2025-08-14T19:12:00",
+      "duration_minutes": 27,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 98.6045243818348,
+        "avg_focus": 49.98763586217247,
+        "peak_attention": 100,
+        "attention_stability": 70,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 70,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 13
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250814_142300",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-14T14:23:00",
+      "end_time": "2025-08-14T15:36:00",
+      "duration_minutes": 73,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 20.593515087507242,
+        "avg_focus": 36.729203040271436,
+        "peak_attention": 27.593515087507242,
+        "attention_stability": 60,
+        "focus_episodes": 7,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 72,
+        "quiz_score": 79,
+        "time_on_task": 98,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250814_112700",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-14T11:27:00",
+      "end_time": "2025-08-14T11:49:00",
+      "duration_minutes": 22,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 47.86422200948793,
+        "avg_focus": 33.05968167180913,
+        "peak_attention": 59.86422200948793,
+        "attention_stability": 73,
+        "focus_episodes": 3,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 91,
+        "quiz_score": null,
+        "time_on_task": 81,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250814_172200",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-14T17:22:00",
+      "end_time": "2025-08-14T18:27:00",
+      "duration_minutes": 65,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 32.127341779573854,
+        "avg_focus": 34.058307606700424,
+        "peak_attention": 46.127341779573854,
+        "attention_stability": 81,
+        "focus_episodes": 6,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 11
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-14T17:42:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250813_150300",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-13T15:03:00",
+      "end_time": "2025-08-13T16:26:00",
+      "duration_minutes": 83,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 84.05287834023652,
+        "avg_focus": 44.840503731301105,
+        "peak_attention": 100,
+        "attention_stability": 80,
+        "focus_episodes": 4,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 75,
+        "quiz_score": null,
+        "time_on_task": 91,
+        "interaction_count": 22
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250813_150100",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-13T15:01:00",
+      "end_time": "2025-08-13T16:21:00",
+      "duration_minutes": 80,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 52.73412230045595,
+        "avg_focus": 41.19759710856409,
+        "peak_attention": 62.73412230045595,
+        "attention_stability": 95,
+        "focus_episodes": 5,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 86,
+        "quiz_score": null,
+        "time_on_task": 81,
+        "interaction_count": 23
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250813_104700",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-13T10:47:00",
+      "end_time": "2025-08-13T11:18:00",
+      "duration_minutes": 31,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 78.80250189394047,
+        "avg_focus": 65.03950107615518,
+        "peak_attention": 90.80250189394047,
+        "attention_stability": 85,
+        "focus_episodes": 5,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": 62,
+        "time_on_task": 96,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-13T10:58:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250812_114600",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-12T11:46:00",
+      "end_time": "2025-08-12T12:17:00",
+      "duration_minutes": 31,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 85.96065374146932,
+        "avg_focus": 85.4388318225967,
+        "peak_attention": 100,
+        "attention_stability": 79,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 82,
+        "quiz_score": 70,
+        "time_on_task": 98,
+        "interaction_count": 5
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-12T12:10:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250812_160900",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-12T16:09:00",
+      "end_time": "2025-08-12T16:29:00",
+      "duration_minutes": 20,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 78.12389410150651,
+        "avg_focus": 69.33415674000781,
+        "peak_attention": 87.12389410150651,
+        "attention_stability": 77,
+        "focus_episodes": 3,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 88,
+        "quiz_score": null,
+        "time_on_task": 83,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250812_092700",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_2",
+      "start_time": "2025-08-12T09:27:00",
+      "end_time": "2025-08-12T10:52:00",
+      "duration_minutes": 85,
+      "content_type": "interactive_tutorial",
+      "eeg_metrics": {
+        "avg_attention": 18.849721498851395,
+        "avg_focus": 51.23561545545316,
+        "peak_attention": 36.849721498851395,
+        "attention_stability": 74,
+        "focus_episodes": 7,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 80,
+        "quiz_score": null,
+        "time_on_task": 93,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250812_085100",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-12T08:51:00",
+      "end_time": "2025-08-12T09:42:00",
+      "duration_minutes": 51,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 38.668688118255936,
+        "avg_focus": 34.68078457695675,
+        "peak_attention": 56.668688118255936,
+        "attention_stability": 76,
+        "focus_episodes": 4,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 77,
+        "quiz_score": 67,
+        "time_on_task": 82,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-12T09:37:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250811_192500",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-11T19:25:00",
+      "end_time": "2025-08-11T19:56:00",
+      "duration_minutes": 31,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 91.39440996732549,
+        "avg_focus": 49.27610997031649,
+        "peak_attention": 100,
+        "attention_stability": 86,
+        "focus_episodes": 3,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 92,
+        "quiz_score": null,
+        "time_on_task": 94,
+        "interaction_count": 16
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250811_160000",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-11T16:00:00",
+      "end_time": "2025-08-11T17:19:00",
+      "duration_minutes": 79,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 60.745970193478215,
+        "avg_focus": 74.41413339045931,
+        "peak_attention": 70.74597019347821,
+        "attention_stability": 93,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": null,
+        "time_on_task": 89,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-11T17:10:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250811_083900",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-11T08:39:00",
+      "end_time": "2025-08-11T10:01:00",
+      "duration_minutes": 82,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 75.41322024227757,
+        "avg_focus": 41.894329522185586,
+        "peak_attention": 82.41322024227757,
+        "attention_stability": 63,
+        "focus_episodes": 2,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 78,
+        "quiz_score": 80,
+        "time_on_task": 94,
+        "interaction_count": 21
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-11T09:06:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_3_20250811_144700",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-11T14:47:00",
+      "end_time": "2025-08-11T16:05:00",
+      "duration_minutes": 78,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 51.18184390539774,
+        "avg_focus": 46.86978987405615,
+        "peak_attention": 64.18184390539774,
+        "attention_stability": 68,
+        "focus_episodes": 7,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 89,
+        "quiz_score": 61,
+        "time_on_task": 93,
+        "interaction_count": 20
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250811_120900",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_3",
+      "start_time": "2025-08-11T12:09:00",
+      "end_time": "2025-08-11T13:37:00",
+      "duration_minutes": 88,
+      "content_type": "hands_on_lab",
+      "eeg_metrics": {
+        "avg_attention": 52.85946037972167,
+        "avg_focus": 45.961357394837584,
+        "peak_attention": 59.85946037972167,
+        "attention_stability": 91,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": 68,
+        "time_on_task": 94,
+        "interaction_count": 25
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-11T12:26:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250810_114200",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-10T11:42:00",
+      "end_time": "2025-08-10T12:39:00",
+      "duration_minutes": 57,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 62.97023299227011,
+        "avg_focus": 90.63159673882795,
+        "peak_attention": 70.97023299227011,
+        "attention_stability": 78,
+        "focus_episodes": 2,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 85,
+        "quiz_score": null,
+        "time_on_task": 80,
+        "interaction_count": 25
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250810_140800",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-10T14:08:00",
+      "end_time": "2025-08-10T14:33:00",
+      "duration_minutes": 25,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 71.49238775742722,
+        "avg_focus": 68.78624877777979,
+        "peak_attention": 77.49238775742722,
+        "attention_stability": 65,
+        "focus_episodes": 6,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 71,
+        "quiz_score": null,
+        "time_on_task": 88,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-10T14:14:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250810_151400",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-10T15:14:00",
+      "end_time": "2025-08-10T16:36:00",
+      "duration_minutes": 82,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 76.48133683121458,
+        "avg_focus": 50.1637427710134,
+        "peak_attention": 93.48133683121458,
+        "attention_stability": 85,
+        "focus_episodes": 6,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": 63,
+        "time_on_task": 94,
+        "interaction_count": 6
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250810_192800",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-10T19:28:00",
+      "end_time": "2025-08-10T20:54:00",
+      "duration_minutes": 86,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 60.15768854283654,
+        "avg_focus": 36.90347351577712,
+        "peak_attention": 74.15768854283654,
+        "attention_stability": 83,
+        "focus_episodes": 5,
+        "distraction_events": 5
+      },
+      "learning_metrics": {
+        "completion_rate": 83,
+        "quiz_score": 71,
+        "time_on_task": 83,
+        "interaction_count": 19
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250810_110500",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-10T11:05:00",
+      "end_time": "2025-08-10T11:41:00",
+      "duration_minutes": 36,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 90.02703980022653,
+        "avg_focus": 58.199196653767146,
+        "peak_attention": 99.02703980022653,
+        "attention_stability": 93,
+        "focus_episodes": 4,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 82,
+        "quiz_score": 75,
+        "time_on_task": 84,
+        "interaction_count": 9
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-10T11:14:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250809_164000",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-09T16:40:00",
+      "end_time": "2025-08-09T17:00:00",
+      "duration_minutes": 20,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 76.12278748023564,
+        "avg_focus": 69.69050338457046,
+        "peak_attention": 93.12278748023564,
+        "attention_stability": 94,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": null,
+        "time_on_task": 98,
+        "interaction_count": 16
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-09T16:50:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_1_20250809_201100",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-09T20:11:00",
+      "end_time": "2025-08-09T21:21:00",
+      "duration_minutes": 70,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 72.4862570229163,
+        "avg_focus": 66.05614704607524,
+        "peak_attention": 88.4862570229163,
+        "attention_stability": 62,
+        "focus_episodes": 4,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 75,
+        "quiz_score": 87,
+        "time_on_task": 91,
+        "interaction_count": 11
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250809_082000",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-09T08:20:00",
+      "end_time": "2025-08-09T09:49:00",
+      "duration_minutes": 89,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 38.95561238398259,
+        "avg_focus": 60.56575735078864,
+        "peak_attention": 52.95561238398259,
+        "attention_stability": 76,
+        "focus_episodes": 8,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 89,
+        "quiz_score": 69,
+        "time_on_task": 95,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250809_203000",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-09T20:30:00",
+      "end_time": "2025-08-09T21:12:00",
+      "duration_minutes": 42,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 29.720369473138057,
+        "avg_focus": 43.42069083352516,
+        "peak_attention": 36.72036947313806,
+        "attention_stability": 86,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 76,
+        "quiz_score": null,
+        "time_on_task": 93,
+        "interaction_count": 14
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250809_193300",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-09T19:33:00",
+      "end_time": "2025-08-09T20:02:00",
+      "duration_minutes": 29,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 55.76541455508731,
+        "avg_focus": 57.02416690516721,
+        "peak_attention": 66.76541455508732,
+        "attention_stability": 92,
+        "focus_episodes": 5,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 77,
+        "quiz_score": null,
+        "time_on_task": 88,
+        "interaction_count": 19
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250809_140800",
+      "user_id": "demo_student_3",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-09T14:08:00",
+      "end_time": "2025-08-09T14:27:00",
+      "duration_minutes": 19,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 33.42535023553711,
+        "avg_focus": 72.62323240278502,
+        "peak_attention": 46.42535023553711,
+        "attention_stability": 77,
+        "focus_episodes": 8,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 94,
+        "quiz_score": 79,
+        "time_on_task": 82,
+        "interaction_count": 22
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250809_081500",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-09T08:15:00",
+      "end_time": "2025-08-09T08:59:00",
+      "duration_minutes": 44,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 66.95719640583387,
+        "avg_focus": 67.99433554392681,
+        "peak_attention": 79.95719640583387,
+        "attention_stability": 62,
+        "focus_episodes": 2,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 100,
+        "quiz_score": 62,
+        "time_on_task": 87,
+        "interaction_count": 14
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250808_091200",
+      "user_id": "demo_student_1",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-08T09:12:00",
+      "end_time": "2025-08-08T09:30:00",
+      "duration_minutes": 18,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 95.14633830772459,
+        "avg_focus": 69.39168599031235,
+        "peak_attention": 100,
+        "attention_stability": 86,
+        "focus_episodes": 4,
+        "distraction_events": 2
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": 74,
+        "time_on_task": 83,
+        "interaction_count": 19
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_1_20250808_080700",
+      "user_id": "demo_student_1",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-08T08:07:00",
+      "end_time": "2025-08-08T08:36:00",
+      "duration_minutes": 29,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 56.98991107974001,
+        "avg_focus": 77.55324684814461,
+        "peak_attention": 66.98991107974001,
+        "attention_stability": 88,
+        "focus_episodes": 8,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 94,
+        "quiz_score": 65,
+        "time_on_task": 83,
+        "interaction_count": 7
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250808_182200",
+      "user_id": "demo_student_2",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-08T18:22:00",
+      "end_time": "2025-08-08T19:50:00",
+      "duration_minutes": 88,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 22.161812937379622,
+        "avg_focus": 53.98334194636435,
+        "peak_attention": 39.16181293737962,
+        "attention_stability": 71,
+        "focus_episodes": 8,
+        "distraction_events": 0
+      },
+      "learning_metrics": {
+        "completion_rate": 74,
+        "quiz_score": 70,
+        "time_on_task": 90,
+        "interaction_count": 17
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250807_153600",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-07T15:36:00",
+      "end_time": "2025-08-07T16:26:00",
+      "duration_minutes": 50,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 45.11398767995547,
+        "avg_focus": 30.455924263992756,
+        "peak_attention": 62.11398767995547,
+        "attention_stability": 68,
+        "focus_episodes": 2,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 93,
+        "quiz_score": 65,
+        "time_on_task": 91,
+        "interaction_count": 20
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-07T16:07:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    },
+    {
+      "id": "session_demo_student_2_20250807_144400",
+      "user_id": "demo_student_2",
+      "course_id": "cs_ml_101",
+      "module_id": "ml_module_1",
+      "start_time": "2025-08-07T14:44:00",
+      "end_time": "2025-08-07T15:30:00",
+      "duration_minutes": 46,
+      "content_type": "video_lecture",
+      "eeg_metrics": {
+        "avg_attention": 54.386550997626145,
+        "avg_focus": 43.255000496781385,
+        "peak_attention": 70.38655099762614,
+        "attention_stability": 86,
+        "focus_episodes": 2,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 96,
+        "quiz_score": 80,
+        "time_on_task": 97,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_2_20250807_085500",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-07T08:55:00",
+      "end_time": "2025-08-07T10:02:00",
+      "duration_minutes": 67,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 54.79479130996967,
+        "avg_focus": 32.281458443902245,
+        "peak_attention": 61.79479130996967,
+        "attention_stability": 77,
+        "focus_episodes": 6,
+        "distraction_events": 1
+      },
+      "learning_metrics": {
+        "completion_rate": 97,
+        "quiz_score": 91,
+        "time_on_task": 90,
+        "interaction_count": 12
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250807_140600",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_2",
+      "start_time": "2025-08-07T14:06:00",
+      "end_time": "2025-08-07T15:18:00",
+      "duration_minutes": 72,
+      "content_type": "case_studies",
+      "eeg_metrics": {
+        "avg_attention": 87.06848146426567,
+        "avg_focus": 51.07393757044331,
+        "peak_attention": 100,
+        "attention_stability": 63,
+        "focus_episodes": 3,
+        "distraction_events": 4
+      },
+      "learning_metrics": {
+        "completion_rate": 77,
+        "quiz_score": 82,
+        "time_on_task": 80,
+        "interaction_count": 21
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250807_155500",
+      "user_id": "demo_student_3",
+      "course_id": "ai_ethics_201",
+      "module_id": "ethics_module_1",
+      "start_time": "2025-08-07T15:55:00",
+      "end_time": "2025-08-07T17:23:00",
+      "duration_minutes": 88,
+      "content_type": "discussion_forum",
+      "eeg_metrics": {
+        "avg_attention": 42.70770754114288,
+        "avg_focus": 54.06246227452188,
+        "peak_attention": 47.70770754114288,
+        "attention_stability": 86,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 84,
+        "quiz_score": null,
+        "time_on_task": 88,
+        "interaction_count": 22
+      },
+      "adaptive_actions": []
+    },
+    {
+      "id": "session_demo_student_3_20250807_170700",
+      "user_id": "demo_student_3",
+      "course_id": "neuro_101",
+      "module_id": "neuro_module_1",
+      "start_time": "2025-08-07T17:07:00",
+      "end_time": "2025-08-07T17:44:00",
+      "duration_minutes": 37,
+      "content_type": "interactive_3d",
+      "eeg_metrics": {
+        "avg_attention": 65.05703115737816,
+        "avg_focus": 45.99099402921537,
+        "peak_attention": 82.05703115737816,
+        "attention_stability": 90,
+        "focus_episodes": 7,
+        "distraction_events": 3
+      },
+      "learning_metrics": {
+        "completion_rate": 87,
+        "quiz_score": 74,
+        "time_on_task": 89,
+        "interaction_count": 13
+      },
+      "adaptive_actions": [
+        {
+          "timestamp": "2025-08-07T17:29:00",
+          "action": "difficulty_adjustment",
+          "reason": "low_attention_detected",
+          "details": "Reduced content difficulty from 0.7 to 0.5"
+        }
+      ]
+    }
+  ],
+  "ai_conversations": [
+    {
+      "id": "conv_001",
+      "user_id": "demo_student_1",
+      "course_id": "cs_ml_101",
+      "start_time": "2024-01-20T14:30:00Z",
+      "status": "completed",
+      "messages": [
+        {
+          "timestamp": "2024-01-20T14:30:15Z",
+          "sender": "student",
+          "message": "I'm having trouble understanding gradient descent. Can you explain it simply?"
+        },
+        {
+          "timestamp": "2024-01-20T14:30:45Z",
+          "sender": "ai_tutor",
+          "message": "I'd be happy to help! Think of gradient descent like finding the bottom of a hill while blindfolded. You feel the slope around you and take steps in the steepest downward direction. In machine learning, the 'hill' is your error function, and you're trying to find the lowest error (best model). Would you like me to show you a visual example?",
+          "confidence": 0.92,
+          "personalization_factors": [
+            "visual_learner",
+            "beginner_level"
+          ]
+        },
+        {
+          "timestamp": "2024-01-20T14:31:20Z",
+          "sender": "student",
+          "message": "Yes, that would help! And how does the learning rate affect this process?"
+        },
+        {
+          "timestamp": "2024-01-20T14:31:55Z",
+          "sender": "ai_tutor",
+          "message": "Great question! The learning rate controls how big steps you take down the hill. If it's too large, you might overshoot the bottom and bounce around. If it's too small, you'll take forever to reach the bottom. I notice your EEG shows good focus right now - perfect time for a deeper explanation. Let me show you what happens with different learning rates...",
+          "confidence": 0.89,
+          "personalization_factors": [
+            "high_attention",
+            "visual_learner"
+          ],
+          "eeg_context": {
+            "attention_level": 78,
+            "focus_level": 82,
+            "optimal_for_learning": true
+          }
+        }
+      ],
+      "summary": {
+        "topic": "gradient_descent",
+        "understanding_improvement": 0.7,
+        "engagement_score": 0.85,
+        "follow_up_needed": false
+      }
+    },
+    {
+      "id": "conv_002",
+      "user_id": "demo_student_2",
+      "course_id": "neuro_101",
+      "start_time": "2024-01-19T16:15:00Z",
+      "status": "completed",
+      "messages": [
+        {
+          "timestamp": "2024-01-19T16:15:30Z",
+          "sender": "student",
+          "message": "Why do we have different types of memory? Seems complicated."
+        },
+        {
+          "timestamp": "2024-01-19T16:16:10Z",
+          "sender": "ai_tutor",
+          "message": "I can see your attention is a bit scattered right now - let's use a hands-on approach! Think of your brain like a smartphone. You have RAM (working memory) for what you're actively using, and storage (long-term memory) for everything else. Different types serve different purposes. Want to try a quick memory experiment to see this in action?",
+          "confidence": 0.87,
+          "personalization_factors": [
+            "kinesthetic_learner",
+            "low_attention",
+            "interactive_preference"
+          ],
+          "eeg_context": {
+            "attention_level": 45,
+            "focus_level": 38,
+            "optimal_for_learning": false,
+            "recommended_action": "interactive_content"
+          }
+        }
+      ]
+    }
+  ],
+  "knowledge_graph": {
+    "nodes": [
+      {
+        "id": "ml_concept",
+        "type": "Concept",
+        "name": "Machine Learning",
+        "difficulty": 0.6
+      },
+      {
+        "id": "neural_networks",
+        "type": "Concept",
+        "name": "Neural Networks",
+        "difficulty": 0.8
+      },
+      {
+        "id": "supervised_learning",
+        "type": "Concept",
+        "name": "Supervised Learning",
+        "difficulty": 0.4
+      },
+      {
+        "id": "gradient_descent",
+        "type": "Concept",
+        "name": "Gradient Descent",
+        "difficulty": 0.7
+      },
+      {
+        "id": "linear_regression",
+        "type": "Concept",
+        "name": "Linear Regression",
+        "difficulty": 0.5
+      },
+      {
+        "id": "brain_anatomy",
+        "type": "Concept",
+        "name": "Brain Anatomy",
+        "difficulty": 0.3
+      },
+      {
+        "id": "memory_systems",
+        "type": "Concept",
+        "name": "Memory Systems",
+        "difficulty": 0.6
+      },
+      {
+        "id": "neurons",
+        "type": "Concept",
+        "name": "Neurons",
+        "difficulty": 0.4
+      },
+      {
+        "id": "programming",
+        "type": "Skill",
+        "name": "Programming",
+        "level": "intermediate"
+      },
+      {
+        "id": "statistics",
+        "type": "Skill",
+        "name": "Statistics",
+        "level": "beginner"
+      },
+      {
+        "id": "critical_thinking",
+        "type": "Skill",
+        "name": "Critical Thinking",
+        "level": "advanced"
+      },
+      {
+        "id": "understand_ml",
+        "type": "LearningObjective",
+        "name": "Understand ML Fundamentals"
+      },
+      {
+        "id": "implement_algorithms",
+        "type": "LearningObjective",
+        "name": "Implement ML Algorithms"
+      },
+      {
+        "id": "analyze_brain_function",
+        "type": "LearningObjective",
+        "name": "Analyze Brain Function"
+      }
+    ],
+    "relationships": [
+      {
+        "from": "ml_concept",
+        "to": "supervised_learning",
+        "type": "INCLUDES",
+        "strength": 0.9
+      },
+      {
+        "from": "ml_concept",
+        "to": "neural_networks",
+        "type": "INCLUDES",
+        "strength": 0.8
+      },
+      {
+        "from": "supervised_learning",
+        "to": "linear_regression",
+        "type": "INCLUDES",
+        "strength": 0.7
+      },
+      {
+        "from": "neural_networks",
+        "to": "gradient_descent",
+        "type": "REQUIRES",
+        "strength": 0.8
+      },
+      {
+        "from": "linear_regression",
+        "to": "gradient_descent",
+        "type": "USES",
+        "strength": 0.6
+      },
+      {
+        "from": "brain_anatomy",
+        "to": "neurons",
+        "type": "INCLUDES",
+        "strength": 0.9
+      },
+      {
+        "from": "memory_systems",
+        "to": "brain_anatomy",
+        "type": "BUILDS_ON",
+        "strength": 0.7
+      },
+      {
+        "from": "programming",
+        "to": "implement_algorithms",
+        "type": "ENABLES",
+        "strength": 0.9
+      },
+      {
+        "from": "statistics",
+        "to": "understand_ml",
+        "type": "SUPPORTS",
+        "strength": 0.8
+      }
+    ],
+    "user_knowledge": [
+      {
+        "user_id": "demo_student_1",
+        "concept_masteries": [
+          {
+            "concept_id": "ml_concept",
+            "mastery_level": 0.7,
+            "confidence": 0.8
+          },
+          {
+            "concept_id": "supervised_learning",
+            "mastery_level": 0.8,
+            "confidence": 0.9
+          },
+          {
+            "concept_id": "linear_regression",
+            "mastery_level": 0.6,
+            "confidence": 0.7
+          },
+          {
+            "concept_id": "gradient_descent",
+            "mastery_level": 0.4,
+            "confidence": 0.5
+          }
+        ]
+      },
+      {
+        "user_id": "demo_student_2",
+        "concept_masteries": [
+          {
+            "concept_id": "brain_anatomy",
+            "mastery_level": 0.5,
+            "confidence": 0.6
+          },
+          {
+            "concept_id": "neurons",
+            "mastery_level": 0.7,
+            "confidence": 0.8
+          },
+          {
+            "concept_id": "memory_systems",
+            "mastery_level": 0.3,
+            "confidence": 0.4
+          }
+        ]
+      }
+    ]
+  },
+  "analytics": {
+    "platform_overview": {
+      "total_users": 127,
+      "active_users_today": 45,
+      "total_courses": 23,
+      "total_learning_hours": 2847,
+      "avg_session_duration": 42.3,
+      "completion_rate": 78.5,
+      "user_satisfaction": 4.6
+    },
+    "eeg_insights": {
+      "avg_attention_score": 68.4,
+      "avg_focus_score": 65.2,
+      "peak_learning_hours": [
+        "09:00-11:00",
+        "14:00-16:00"
+      ],
+      "attention_improvement_rate": 12.3,
+      "optimal_session_length": 45,
+      "break_effectiveness": 23.7
+    },
+    "learning_effectiveness": {
+      "adaptive_interventions": 1247,
+      "successful_adaptations": 89.2,
+      "knowledge_retention": 84.6,
+      "skill_progression_rate": 15.8,
+      "personalization_accuracy": 91.3
+    },
+    "course_performance": [
+      {
+        "course_id": "cs_ml_101",
+        "enrollment": 89,
+        "completion_rate": 82.0,
+        "avg_rating": 4.6,
+        "avg_attention": 71.2,
+        "difficulty_rating": 0.7
+      },
+      {
+        "course_id": "neuro_101",
+        "enrollment": 67,
+        "completion_rate": 91.0,
+        "avg_rating": 4.8,
+        "avg_attention": 76.8,
+        "difficulty_rating": 0.5
+      }
+    ],
+    "real_time_metrics": {
+      "current_active_sessions": 12,
+      "avg_current_attention": 73.5,
+      "system_load": 0.34,
+      "response_time_ms": 145,
+      "eeg_data_quality": 0.96
+    }
+  },
+  "metadata": {
+    "generated_at": "2025-09-05T12:30:54.711996",
+    "version": "1.0",
+    "purpose": "professor_demonstration"
+  }
+}
